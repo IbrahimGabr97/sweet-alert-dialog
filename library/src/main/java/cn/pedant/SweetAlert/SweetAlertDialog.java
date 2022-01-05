@@ -89,7 +89,10 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     public static final int PROGRESS_TYPE = 5;
 
 
-    public static boolean DARK_STYLE = false;
+    public static final int DARK_STYLE = 6;
+    
+    
+    
 
     //aliases
     public final static int BUTTON_CONFIRM = DialogInterface.BUTTON_POSITIVE;
@@ -113,7 +116,7 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     }
 
     public SweetAlertDialog(Context context, int alertType) {
-        super(context, DARK_STYLE ? R.style.alert_dialog_dark : R.style.alert_dialog_light);
+        super(context, alertType == DARK_STYLE ? R.style.alert_dialog_dark : R.style.alert_dialog_light);
         setCancelable(true);
         setCanceledOnTouchOutside(true); //TODO was false
 
